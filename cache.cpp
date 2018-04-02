@@ -708,6 +708,9 @@ void PrintStats()
     std::cerr << "L2 (hit/miss)\t\t";
     PrintMissStats(ul2);
   }
+  if (KnobDLB1) {
+	  std::cerr << "Bitmap Cache Pluz Work\t\t";
+  }
 }
 
 void Fini(int code, void *v)
