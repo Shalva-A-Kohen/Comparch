@@ -914,7 +914,7 @@ void PrintCacheConfig()
     PrintCacheConfigMain(UL2);
   }
   if (KnobDLB1) {
-	  std::cerr << "Using the bitmap cache"
+	  std::cerr << "Using the bitmap cache";
   }
 }
 
@@ -972,7 +972,7 @@ int main(int argc, char *argv[])
 		  KnobDLB1CacheSize.Value() * KILO,
 		  KnobLineSize.Value(),
 		  KnobDLB1NumWays.Value());
-	  )
+	  );
   }
   // }}}
 
