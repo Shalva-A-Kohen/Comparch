@@ -204,7 +204,7 @@ void LoadMultipleLines(ADDRINT inst_addr, ADDRINT addr, UINT32 size)
     fa_opt_dl1->AccessMultipleLines(inst_addr, addr, size, BaseCache::kLoad);
     sa_opt_dl1->AccessMultipleLines(inst_addr, addr, size, BaseCache::kLoad);
     const bool is_dl1_hit =
-      sa_lru_dlb1->AccessMultipleLines(inst_addr, addr, size, BaseCache::kLoad);
+      sa_lru_dl1->AccessMultipleLines(inst_addr, addr, size, BaseCache::kLoad);
 
     if (KnobUL2) {
       if (!is_dl1_hit) {
@@ -228,7 +228,7 @@ void StoreMultipleLines(ADDRINT inst_addr, ADDRINT addr, UINT32 size)
     fa_opt_dl1->AccessMultipleLines(inst_addr, addr, size, BaseCache::kStore);
     sa_opt_dl1->AccessMultipleLines(inst_addr, addr, size, BaseCache::kStore);
     const bool is_dl1_hit =
-      sa_lru_dlb1->AccessMultipleLines(inst_addr, addr, size, BaseCache::kStore);
+      sa_lru_dl1->AccessMultipleLines(inst_addr, addr, size, BaseCache::kStore);
 
     if (KnobUL2) {
       if (!is_dl1_hit) {
@@ -251,7 +251,7 @@ void LoadSingleLine(ADDRINT inst_addr, ADDRINT addr)
     fa_opt_dl1->AccessSingleLine(inst_addr, addr, BaseCache::kLoad);
     sa_opt_dl1->AccessSingleLine(inst_addr, addr, BaseCache::kLoad);
     const bool is_dl1_hit =
-      sa_lru_dlb1->AccessSingleLine(inst_addr, addr, BaseCache::kLoad);
+      sa_lru_dl1->AccessSingleLine(inst_addr, addr, BaseCache::kLoad);
 
     if (KnobUL2) {
       if (!is_dl1_hit) {
@@ -274,7 +274,7 @@ void StoreSingleLine(ADDRINT inst_addr, ADDRINT addr)
     fa_opt_dl1->AccessSingleLine(inst_addr, addr, BaseCache::kStore);
     sa_opt_dl1->AccessSingleLine(inst_addr, addr, BaseCache::kStore);
     const bool is_dl1_hit =
-      sa_lru_dlb1->AccessSingleLine(inst_addr, addr, BaseCache::kStore);
+      sa_lru_dl1->AccessSingleLine(inst_addr, addr, BaseCache::kStore);
 
     if (KnobUL2) {
       if (!is_dl1_hit) {
