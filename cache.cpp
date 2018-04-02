@@ -972,7 +972,6 @@ int main(int argc, char *argv[])
 		  KnobDLB1CacheSize.Value() * KILO,
 		  KnobLineSize.Value(),
 		  KnobDLB1NumWays.Value());
-	  );
   }
   // }}}
 
