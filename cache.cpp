@@ -285,7 +285,9 @@ void StoreSingleLine(ADDRINT inst_addr, ADDRINT addr)
       }
     }
   }
-  bit_dlb1->AccessSingleLine(inst_addr, addr, BaseCache::kStore);
+  if (KnobDLB1) {
+	  bit_dlb1->AccessSingleLine(inst_addr, addr, BaseCache::kStore);
+  }
 }
 // }}}
 
