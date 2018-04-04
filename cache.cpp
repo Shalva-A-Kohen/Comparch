@@ -868,6 +868,17 @@ void Image(IMG img, void *v)
   }
 }
 
+void findSymbol(IMG img, void *v)
+{
+	//find address of bitmap
+	// Forward pass over all symbols in an image
+	for (SYM sym = IMG_RegsymHead(img); SYM_Valid(sym); sym = SYM_Next(sym))
+	{
+		const string& symbol = SYM_Name(sym);
+		std::cerr << symbol << "\n";
+	}
+}
+
 INT32 PrintUsage()
 {
   std::cerr <<
@@ -1055,6 +1066,7 @@ int main(int argc, char *argv[])
   //PrintCacheConfig();
 
   IMG_AddInstrumentFunction(Image, 0);
+  IMG_AddInstrumentFunction(findSymbol, 0);
   TRACE_AddInstrumentFunction(Trace, 0);
   RTN_AddInstrumentFunction(Routine, 0);
   INS_AddInstrumentFunction(Instruction, 0);
@@ -1062,7 +1074,6 @@ int main(int argc, char *argv[])
   PIN_AddFiniFunction(Fini, 0);
 
   // Never returns
-  PIN_InitSymbols();
   PIN_StartProgram();
 
   return 0;
